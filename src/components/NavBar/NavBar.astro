@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import MyLogo from "../../assets/Logo/My-New-Logo-256.webp";
+import Button from "./Button.astro";
+import SuperText from "../SuperText.astro";
+---
+
+<nav
+  class="fixed top-0 z-10 flex h-20 w-full items-center justify-between bg-gradient-to-b from-base-300 p-4"
+>
+  <a href="#" class="aspect-square h-full">
+    <Image src={MyLogo} class="aspect-square" alt="Seba9989.dev" />
+  </a>
+
+  <div class="flex flex-row-reverse items-center justify-between gap-4">
+    <a class="text-xl font-bold" href="https://github.com/seba9989">
+      <SuperText>{"> GitHub <"}</SuperText>
+    </a>
+    <Button href="https://github.com/seba9989?tab=repositories">Projects</Button>
+  </div>
+</nav>
