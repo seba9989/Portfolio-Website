@@ -1,6 +1,4 @@
 ---
-import Link from "@components/Link.svelte";
-
 interface Props {
   href: string;
   className?: string;
@@ -9,6 +7,6 @@ interface Props {
 const { href, className = `btn btn-ghost text-xl font-bold` } = Astro.props;
 ---
 
-<Link className={className} href={href} client:load>
+<a class={className} href={href}>
   <slot />
-</Link>
+</a>

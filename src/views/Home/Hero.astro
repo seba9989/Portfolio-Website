@@ -1,5 +1,5 @@
 ---
-import Link from "@components/Link.svelte";
+// import Link from "@components/Link.astro";
 import SuperText from "@components/SuperText.astro";
 import { Icon } from "astro-icon/components";
 import SkillsIcon from "@components/SkillsIcon.astro";
@@ -30,7 +30,7 @@ import SkillsIcon from "@components/SkillsIcon.astro";
     </div>
   </div>
 
-  <Link href="#about-me" className="absolute bottom-0" client:load>
+  <a href="#about-me" class="absolute bottom-0">
     <div class="arrow relative flex h-[5em] w-[5em] justify-center">
       <svg
         class="bottom-arrow absolute top-0"
@@ -57,7 +57,7 @@ import SkillsIcon from "@components/SkillsIcon.astro";
         <SuperText>Scroll down</SuperText>
       </p>
     </div>
-  </Link>
+  </a>
 </section>
 
 <style scoped>
