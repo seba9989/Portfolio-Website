@@ -1,0 +1,40 @@
+---
+import SuperText from "@components/SuperText.astro";
+
+interface Props {
+  className?: string;
+}
+
+const { className = "w-fit text-xl" } = await Astro.props;
+---
+
+<a class={className} href="https://github.com/seba9989">
+  <SuperText text="> GitHub <">
+    <button id="git" class="font-bold hover:font-black">
+      {">"}
+      <span class="font-bold">GitHub</span>
+      {"<"}
+    </button>
+  </SuperText>
+</a>
+
+<style scoped>
+  #git {
+    margin: 0 0;
+    transition: all 0.1s;
+    width: max-content;
+  }
+  #git:hover {
+    margin: 0 0.25rem;
+  }
+  #git > span {
+    margin: 0 0.375rem;
+    transition: all 0.1s;
+    width: max-content;
+    font-size:;
+  }
+
+  #git:hover > span {
+    margin: 0 0.125rem;
+  }
+</style>

@@ -1,12 +1,14 @@
 ---
+import Link from "@components/Link.svelte";
+
 interface Props {
   href: string;
   className?: string;
 }
 
-const { href, className } = Astro.props;
+const { href, className = `btn btn-ghost text-xl font-bold` } = Astro.props;
 ---
 
-<a class:list={[`btn btn-ghost text-xl font-bold`, className]} href={href}>
+<Link className={className} href={href} client:load>
   <slot />
-</a>
+</Link>

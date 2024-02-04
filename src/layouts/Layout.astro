@@ -1,7 +1,8 @@
 ---
 import { getImage } from "astro:assets";
-import NavBar from "../components/NavBar/NavBar.astro";
-import logo from "../assets/Logo/My-New-Logo-64.png";
+import NavBar from "@components/NavBar/NavBar.astro";
+import Footer from "@views/Footer.astro";
+import logo from "@assets/Logo/My-New-Logo-64.png";
 interface Props {
   title: string;
 }
@@ -19,10 +20,14 @@ const favicon = await getImage({ src: logo, format: "webp" });
     <link rel="icon" type="image/ico" href={favicon.src} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script src="../ts/aosInit"></script>
   </head>
   <body>
     <NavBar />
-    <slot />
+    <div class="container">
+      <slot />
+    </div>
+    <Footer />
   </body>
 </html>
 
@@ -34,5 +39,15 @@ const favicon = await getImage({ src: logo, format: "webp" });
 
   * {
     box-sizing: border-box;
+  }
+
+  section {
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: calc(100vw - 2rem);
+    width: 1024px;
+    margin: auto;
   }
 </style>

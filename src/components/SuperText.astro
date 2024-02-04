@@ -1,7 +1,9 @@
 ---
-let text = "";
+interface Props {
+  text?: string;
+}
 
-text = await Astro.slots.render("default");
+const { text = await Astro.slots.render("default") } = Astro.props;
 ---
 
 <span class="inline-grid h-full items-center justify-center">

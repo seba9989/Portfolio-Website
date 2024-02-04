@@ -1,0 +1,81 @@
+---
+import Link from "@components/Link.svelte";
+import SuperText from "@components/SuperText.astro";
+import { Icon } from "astro-icon/components";
+import SkillsIcon from "@components/SkillsIcon.astro";
+---
+
+<section id="hero" class="relative flex flex-col items-center justify-center">
+  <div>
+    <h2 class="w-fit text-[clamp(1.3rem,4vw,3.15rem)]">
+      Hello, I'm <span class="font-bold"><SuperText>Seba9989</SuperText></span>
+    </h2>
+    <h1 class="w-fit text-[clamp(2rem,6vw,4.2rem)] font-black">
+      Front-end Developer
+    </h1>
+
+    <div class="mt-20 flex items-center gap-2">
+      <label class="hidden text-[clamp(1rem,3vw,2.1rem)] md:flex">Skills</label>
+      <div class="divider divider-horizontal hidden md:flex"></div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <SkillsIcon icon="html5" />
+        <SkillsIcon icon="css3" />
+        <SkillsIcon icon="scss" />
+        <SkillsIcon icon="astro" />
+        <SkillsIcon icon="svelte" />
+        <SkillsIcon icon="typescript" />
+        <SkillsIcon icon="tailwind" />
+        <!-- <SkillsIcon icon="nestjs" /> -->
+      </div>
+    </div>
+  </div>
+
+  <Link href="#about-me" className="absolute bottom-0" client:load>
+    <div class="arrow relative flex h-[5em] w-[5em] justify-center">
+      <svg
+        class="bottom-arrow absolute top-0"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        width="5em"
+        height="5em"
+        viewBox="0 0 24 24"
+        ><path
+          fill="currentColor"
+          d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6z"></path></svg
+      >
+      <svg
+        class="top-arrow absolute top-2"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        width="5em"
+        height="2em"
+        viewBox="0 0 24 24"
+        ><path fill="currentColor" d="m7 10l5 5l5-5z"></path></svg
+      >
+
+      <p class="absolute -top-2 whitespace-nowrap text-nowrap font-bold">
+        <SuperText>Scroll down</SuperText>
+      </p>
+    </div>
+  </Link>
+</section>
+
+<style scoped>
+  .arrow:hover > .top-arrow {
+    top: 0.75rem;
+  }
+
+  .arrow:hover > .bottom-arrow {
+    top: 0.5rem;
+  }
+
+  .arrow:hover > p {
+    top: -0.25rem;
+  }
+
+  .top-arrow,
+  .bottom-arrow,
+  p {
+    transition: all 0.15s;
+  }
+</style>

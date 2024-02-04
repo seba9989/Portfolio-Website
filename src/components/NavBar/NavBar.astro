@@ -1,31 +1,35 @@
 ---
 import { Image } from "astro:assets";
-import MyLogo from "../../assets/Logo/My-New-Logo-256.png";
+import MyLogo from "@assets/Logo/My-New-Logo-256.png";
 import Button from "./Button.astro";
-import SuperText from "../SuperText.astro";
+
+import Link from "@components/Link.svelte";
+import Hamburger from "./Hamburger.svelte";
+import GithubButton from "./GithubButton.astro";
 ---
 
 <nav
-  class="fixed top-0 z-10 flex h-20 w-full items-center justify-between bg-gradient-to-b from-base-300 p-4"
+  class="fixed top-0 z-20 flex h-20 w-full items-center justify-between bg-gradient-to-b from-base-300 p-4"
 >
-  <a href="#" class="aspect-square h-full">
+  <Link href="#" className="aspect-square h-full" client:load>
     <Image
       src={MyLogo}
       format="webp"
       class="aspect-square"
       alt="Seba9989.dev"
     />
-  </a>
+  </Link>
 
-  <div class="flex items-center justify-between gap-4">
-    <Button href="https://github.com/seba9989?tab=repositories">
-      Projects
-    </Button>
-    <a
-      class="text-[clamp(2rem,6vw,4.2rem)] text-xl font-bold w-fit"
-      href="https://github.com/seba9989"
-    >
-      <SuperText>{"> GitHub <"}</SuperText>
-    </a>
+  <div class="hidden items-center justify-between gap-4 sm:flex">
+    <!-- <Button href="#projects-gallery">Projects</Button> -->
+    <Button href="#about-me">About me</Button>
+    <Button href="#contact">Kontakt</Button>
+    <GithubButton />
   </div>
+  <Hamburger client:load>
+    <GithubButton className="underline" />
+    <!-- <Button href="#projects-gallery" className="">Projects</Button> -->
+    <Button href="#about-me" className="">About me</Button>
+    <Button href="#contact" className="">Kontakt</Button>
+  </Hamburger>
 </nav>
