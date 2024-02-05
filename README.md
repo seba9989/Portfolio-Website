@@ -8,4 +8,4 @@
 
 This website is meant to be a hub for my other projects that are broad portfolios.
 
-[![Portfolio Website Screenshot](https://github.com/seba9989/Portfolio-Website/public/Seba9989-dev.png "San Juan Mountains")](https://seba9989.github.io)
+[![Portfolio Website Screenshot](https://raw.githubusercontent.com/seba9989/Portfolio-Website/main/public/Seba9989-dev.png "San Juan Mountains")](https://seba9989.com)
